@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Code2, Briefcase, Award, Github, Linkedin, Mail } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { ArrowRight, Code2, Briefcase, Award, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import profilePicture from "@/assets/profile-picture.jpg";
 
 const Index = () => {
   return (
@@ -13,9 +15,16 @@ const Index = () => {
         
         <div className="container max-w-6xl mx-auto relative z-10">
           <div className="text-center space-y-8 animate-fade-in">
+            <div className="flex justify-center mb-6">
+              <Avatar className="w-32 h-32 border-4 border-primary shadow-2xl shadow-primary/50">
+                <AvatarImage src={profilePicture} alt="MD Atiqur Rahman" />
+                <AvatarFallback>AR</AvatarFallback>
+              </Avatar>
+            </div>
+            
             <Badge className="mb-4" variant="outline">Full Stack Developer</Badge>
             
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 MD Atiqur Rahman
               </span>
@@ -56,6 +65,90 @@ const Index = () => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-primary rounded-full p-1">
             <div className="w-1.5 h-3 bg-primary rounded-full mx-auto animate-pulse" />
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section */}
+      <section className="py-24 px-6 bg-card/50">
+        <div className="container max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Expertise & Tools
+            </span>
+          </h2>
+          
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {["PHP", "Laravel", "Vue.js", "React", "MySQL", "PostgreSQL", "Docker", "AWS", "Node.js", "TypeScript", "Tailwind CSS", "Git"].map((tech) => (
+              <Badge key={tech} variant="secondary" className="text-lg px-6 py-3 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default">
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-24 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <div className="flex items-center justify-between mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                Featured Projects
+              </span>
+            </h2>
+            <Button variant="outline" asChild>
+              <Link to="/projects">
+                View All Projects
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "E-Commerce Platform",
+                description: "Full-stack e-commerce solution with Laravel and Vue.js",
+                tech: ["Laravel", "Vue.js", "MySQL"],
+                image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop"
+              },
+              {
+                title: "Real-Time Analytics Dashboard",
+                description: "Modern analytics platform with React and AWS",
+                tech: ["React", "AWS", "PostgreSQL"],
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+              },
+              {
+                title: "Task Management System",
+                description: "Collaborative task management with Docker deployment",
+                tech: ["PHP", "Docker", "MySQL"],
+                image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop"
+              }
+            ].map((project, index) => (
+              <Card key={index} className="overflow-hidden hover:border-primary/50 transition-all duration-300 group cursor-pointer"
+                onClick={() => window.location.href = '/projects'}>
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <Badge key={t} variant="outline">{t}</Badge>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
