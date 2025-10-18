@@ -160,84 +160,202 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-background to-card/30">
-        <div className="container max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16 text-center">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-background via-card/20 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+        <div className="container max-w-6xl mx-auto relative z-10">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center">
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               What I Do
             </span>
           </h2>
+          <p className="text-center text-muted-foreground text-lg mb-12 md:mb-16 max-w-3xl mx-auto">
+            Passionate about creating innovative solutions that make a difference
+          </p>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <Card className="p-6 md:p-8 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group">
-              <Code2 className="w-10 h-10 md:w-12 md:h-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl md:text-2xl font-bold mb-3">Full Stack Development</h3>
-              <p className="text-muted-foreground">
-                Building scalable web applications with modern frameworks and best practices
-              </p>
+            <Card className="relative p-8 md:p-10 hover:border-primary/50 transition-all duration-300 group overflow-hidden bg-card/50 backdrop-blur-sm">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-300" />
+              <div className="relative z-10">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                  <Code2 className="w-7 h-7 md:w-8 md:h-8 text-primary" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
+                  Full Stack Development
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Building scalable web applications with modern frameworks and best practices
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    Backend & Frontend Architecture
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    API Development & Integration
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    Database Design & Optimization
+                  </li>
+                </ul>
+              </div>
             </Card>
 
-            <Card className="p-6 md:p-8 hover:border-primary/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 group">
-              <Briefcase className="w-10 h-10 md:w-12 md:h-12 text-accent mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl md:text-2xl font-bold mb-3">UI/UX Design</h3>
-              <p className="text-muted-foreground">
-                Creating beautiful, intuitive interfaces that users love to interact with
-              </p>
+            <Card className="relative p-8 md:p-10 hover:border-accent/50 transition-all duration-300 group overflow-hidden bg-card/50 backdrop-blur-sm">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-all duration-300" />
+              <div className="relative z-10">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                  <Briefcase className="w-7 h-7 md:w-8 md:h-8 text-accent" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-accent transition-colors">
+                  UI/UX Design
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Creating beautiful, intuitive interfaces that users love to interact with
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    Responsive Design Systems
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    User Experience Optimization
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    Modern UI Components
+                  </li>
+                </ul>
+              </div>
             </Card>
 
-            <Card className="p-6 md:p-8 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group">
-              <Award className="w-10 h-10 md:w-12 md:h-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl md:text-2xl font-bold mb-3">Problem Solving</h3>
-              <p className="text-muted-foreground">
-                Tackling complex challenges with elegant solutions and clean architecture
-              </p>
+            <Card className="relative p-8 md:p-10 hover:border-primary/50 transition-all duration-300 group overflow-hidden bg-card/50 backdrop-blur-sm sm:col-span-2 lg:col-span-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-300" />
+              <div className="relative z-10">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                  <Award className="w-7 h-7 md:w-8 md:h-8 text-primary" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
+                  Problem Solving
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Tackling complex challenges with elegant solutions and clean architecture
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    Performance Optimization
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    Code Review & Refactoring
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    Technical Architecture
+                  </li>
+                </ul>
+              </div>
             </Card>
           </div>
         </div>
       </section>
 
       {/* Experience Timeline */}
-      <section className="py-16 md:py-24 px-4 md:px-6">
-        <div className="container max-w-4xl mx-auto">
+      <section className="py-16 md:py-24 px-4 md:px-6 relative">
+        <div className="container max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16 text-center">
             <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
               Experience
             </span>
           </h2>
 
-          <div className="space-y-8">
-            {[
-              {
-                role: "Senior Full Stack Developer",
-                company: "Tech Company",
-                period: "2022 - Present",
-                description: "Leading development of enterprise applications and mentoring junior developers"
-              },
-              {
-                role: "Full Stack Developer",
-                company: "Digital Agency",
-                period: "2020 - 2022",
-                description: "Built and maintained multiple client projects using React, Node.js, and cloud services"
-              },
-              {
-                role: "Frontend Developer",
-                company: "Startup Inc",
-                period: "2018 - 2020",
-                description: "Developed responsive web applications and implemented modern UI/UX designs"
-              }
-            ].map((exp, index) => (
-              <Card key={index} className="p-4 md:p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 md:gap-4 mb-3">
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold">{exp.role}</h3>
-                    <p className="text-primary">{exp.company}</p>
+          <div className="relative">
+            {/* Timeline vertical line */}
+            <div className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/30" />
+            
+            <div className="space-y-12">
+              {[
+                {
+                  role: "Senior Full Stack Developer",
+                  company: "Tech Company",
+                  startMonth: "Jan 2022",
+                  endMonth: "Present",
+                  description: "Leading development of enterprise applications and mentoring junior developers",
+                  responsibilities: [
+                    "Architecting and implementing scalable microservices using Laravel and Node.js",
+                    "Leading a team of 5 developers, conducting code reviews and technical mentorship",
+                    "Optimizing database performance resulting in 40% faster query response times",
+                    "Implementing CI/CD pipelines with Docker and AWS for automated deployments"
+                  ]
+                },
+                {
+                  role: "Full Stack Developer",
+                  company: "Digital Agency",
+                  startMonth: "Mar 2020",
+                  endMonth: "Dec 2021",
+                  description: "Built and maintained multiple client projects using React, Node.js, and cloud services",
+                  responsibilities: [
+                    "Developed 15+ responsive web applications for various clients across different industries",
+                    "Integrated third-party APIs and payment gateways (Stripe, PayPal)",
+                    "Collaborated with design teams to implement pixel-perfect UI/UX designs",
+                    "Reduced application load time by 50% through code optimization and lazy loading"
+                  ]
+                },
+                {
+                  role: "Frontend Developer",
+                  company: "Startup Inc",
+                  startMonth: "Jun 2018",
+                  endMonth: "Feb 2020",
+                  description: "Developed responsive web applications and implemented modern UI/UX designs",
+                  responsibilities: [
+                    "Built interactive user interfaces using Vue.js and React",
+                    "Implemented responsive designs ensuring compatibility across all devices",
+                    "Collaborated with backend team to integrate RESTful APIs",
+                    "Contributed to improving the company's design system and component library"
+                  ]
+                }
+              ].map((exp, index) => (
+                <div key={index} className="relative flex gap-6 md:gap-8 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}>
+                  {/* Timeline dot */}
+                  <div className="hidden md:flex flex-col items-center">
+                    <div className="w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20 shadow-lg shadow-primary/50 mt-2" />
                   </div>
-                  <Badge variant="secondary">{exp.period}</Badge>
+                  
+                  <Card className="flex-1 p-6 md:p-8 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group">
+                    <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 mb-4">
+                      <div className="flex-1">
+                        <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
+                          {exp.role}
+                        </h3>
+                        <p className="text-lg text-primary font-semibold mb-1">{exp.company}</p>
+                        <p className="text-sm text-muted-foreground italic">{exp.description}</p>
+                      </div>
+                      <Badge variant="secondary" className="text-sm whitespace-nowrap self-start">
+                        {exp.startMonth} - {exp.endMonth}
+                      </Badge>
+                    </div>
+                    
+                    <div className="space-y-2 mt-6">
+                      <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">
+                        Key Responsibilities
+                      </h4>
+                      <ul className="space-y-2">
+                        {exp.responsibilities.map((resp, idx) => (
+                          <li key={idx} className="flex gap-3 text-sm md:text-base text-muted-foreground">
+                            <span className="text-primary mt-1.5 flex-shrink-0">•</span>
+                            <span>{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Card>
                 </div>
-                <p className="text-muted-foreground">{exp.description}</p>
-              </Card>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
