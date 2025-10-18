@@ -50,7 +50,7 @@ const Index = () => {
               </Button>
             </div>
 
-            <div className="flex items-center justify-center gap-6 pt-8">
+            <div className="flex items-center justify-center gap-6 pt-8 pb-20 md:pb-24">
               <a href="https://github.com/mdatiqurrahman" target="_blank" rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform">
                 <Github className="h-6 w-6" />
@@ -65,7 +65,7 @@ const Index = () => {
 
         <button 
           onClick={() => document.querySelector('#expertise')?.scrollIntoView({ behavior: 'smooth' })}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block cursor-pointer bg-transparent border-0 p-0 hover:scale-110 transition-transform"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce hidden md:block cursor-pointer bg-transparent border-0 p-0 hover:scale-110 transition-transform"
           aria-label="Scroll to expertise section"
         >
           <div className="w-6 h-10 border-2 border-primary/60 rounded-full p-1 backdrop-blur-sm">
