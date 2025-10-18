@@ -51,27 +51,31 @@ const Index = () => {
             </div>
 
             <div className="flex items-center justify-center gap-6 pt-8">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
-                className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/mdatiqurrahman" target="_blank" rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://linkedin.com/in/mdatiqurrahman" target="_blank" rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform">
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+        <button 
+          onClick={() => document.querySelector('#expertise')?.scrollIntoView({ behavior: 'smooth' })}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block cursor-pointer bg-transparent border-0 p-0 hover:scale-110 transition-transform"
+          aria-label="Scroll to expertise section"
+        >
           <div className="w-6 h-10 border-2 border-primary/60 rounded-full p-1 backdrop-blur-sm">
             <div className="w-1.5 h-3 bg-primary rounded-full mx-auto animate-pulse shadow-lg shadow-primary/50" />
           </div>
-        </div>
+        </button>
       </section>
 
       {/* Expertise Section */}
-      <section className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
+      <section id="expertise" className="py-16 md:py-24 px-4 md:px-6 bg-gradient-to-b from-card/30 to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
         <div className="container max-w-6xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16 text-center">
