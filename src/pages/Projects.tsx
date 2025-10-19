@@ -143,12 +143,12 @@ const Projects = () => {
 
       {/* Projects Grid */}
       <section className="px-6 pb-24 relative z-10">
-        <div className="container max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
             {filteredProjects.map((project, index) => (
               <Card 
                 key={project.id} 
-                className="group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary transition-all duration-500 animate-fade-in hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2"
+                className="group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary transition-all duration-500 animate-fade-in hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 flex flex-col h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Glow effect on hover */}
@@ -157,11 +157,11 @@ const Projects = () => {
                   <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-accent/30 via-transparent to-transparent blur-2xl" />
                 </div>
 
-                <div className="relative overflow-hidden aspect-video">
+                <div className="relative overflow-hidden w-full" style={{ paddingTop: '60%' }}>
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="object-cover w-full h-full group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
+                    className="absolute inset-0 object-cover w-full h-full group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                   
@@ -175,25 +175,25 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <div className="relative p-6 space-y-4">
-                  <div>
+                <div className="relative p-6 space-y-4 flex flex-col flex-1">
+                  <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text group-hover:from-primary group-hover:to-accent">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-4">
                       {project.description}
                     </p>
+                  
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-xs font-medium px-3 py-1 hover:bg-primary/20 transition-colors">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs font-medium px-3 py-1 hover:bg-primary/20 transition-colors">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-3 pt-4">
+                  <div className="flex gap-3 pt-4 mt-auto">
                     <Button 
                       size="sm" 
                       className="flex-1 font-semibold shadow-lg hover:shadow-xl hover:shadow-primary/30 transition-all" 

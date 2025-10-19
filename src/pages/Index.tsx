@@ -15,15 +15,16 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent" />
         
         <div className="container max-w-6xl mx-auto relative z-10">
-          <div className="text-center space-y-8 animate-fade-in">
-            <div className="flex justify-center mb-6">
-              <Avatar className="w-24 h-24 md:w-32 md:h-32 border-4 border-primary shadow-2xl shadow-primary/50 ring-4 ring-primary/20">
-                <AvatarImage src={profilePicture} alt="MD Atiqur Rahman" />
+          <div className="text-center space-y-6 animate-fade-in">
+            <div className="flex justify-center mb-8 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 blur-3xl animate-pulse" />
+              <Avatar className="w-28 h-28 md:w-36 md:h-36 border-4 border-primary shadow-2xl shadow-primary/50 ring-8 ring-primary/10 relative z-10 transition-all duration-300 hover:scale-105 hover:ring-primary/20">
+                <AvatarImage src={profilePicture} alt="MD Atiqur Rahman" className="object-cover" />
                 <AvatarFallback>AR</AvatarFallback>
               </Avatar>
             </div>
             
-            <Badge className="mb-4" variant="outline">Full Stack Developer</Badge>
+            <Badge className="mb-2 text-sm px-4 py-1.5" variant="outline">Full Stack Developer</Badge>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight px-4">
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
