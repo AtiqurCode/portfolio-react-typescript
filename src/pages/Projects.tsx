@@ -12,7 +12,7 @@ const mockProjects = [
     description: "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    category: "web",
+    categories: ["web", "mobile"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com"
   },
@@ -22,7 +22,7 @@ const mockProjects = [
     description: "AI-powered content generation tool using OpenAI API for creating marketing copy and blog posts.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
     technologies: ["Next.js", "OpenAI", "TailwindCSS", "Vercel"],
-    category: "ai",
+    categories: ["ai", "web"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com"
   },
@@ -32,7 +32,7 @@ const mockProjects = [
     description: "Cross-platform fitness tracking app with workout plans, progress tracking, and social features.",
     image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop",
     technologies: ["React Native", "Firebase", "Redux", "TypeScript"],
-    category: "mobile",
+    categories: ["mobile"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com"
   },
@@ -42,7 +42,7 @@ const mockProjects = [
     description: "Interactive dashboard for real-time data visualization and business intelligence insights.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
     technologies: ["Vue.js", "D3.js", "WebSocket", "Python"],
-    category: "web",
+    categories: ["web", "ai"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com"
   },
@@ -52,7 +52,7 @@ const mockProjects = [
     description: "Secure cryptocurrency wallet with multi-chain support and decentralized exchange integration.",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
     technologies: ["Web3.js", "Ethereum", "React", "Solidity"],
-    category: "blockchain",
+    categories: ["blockchain", "web"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com"
   },
@@ -62,7 +62,7 @@ const mockProjects = [
     description: "Comprehensive social media analytics platform with sentiment analysis and engagement tracking.",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
     technologies: ["Python", "Django", "React", "PostgreSQL"],
-    category: "ai",
+    categories: ["ai", "web"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com"
   }
@@ -75,7 +75,7 @@ const Projects = () => {
 
   const filteredProjects = selectedCategory === "all" 
     ? mockProjects 
-    : mockProjects.filter(p => p.category === selectedCategory);
+    : mockProjects.filter(p => p.categories.includes(selectedCategory));
 
   return (
     <div className="min-h-screen bg-background">
@@ -133,7 +133,13 @@ const Projects = () => {
                 
                 <div className="p-6 space-y-4">
                   <div>
-                    <Badge className="mb-2 capitalize">{project.category}</Badge>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.categories.map((cat) => (
+                        <Badge key={cat} className="capitalize" variant="default">
+                          {cat}
+                        </Badge>
+                      ))}
+                    </div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
