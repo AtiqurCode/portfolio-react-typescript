@@ -48,7 +48,7 @@ const Index = () => {
         
         <div className="container max-w-6xl mx-auto relative z-10">
           <div className="text-center space-y-6 animate-fade-in">
-            <div className="flex justify-center mb-8 relative">
+            <div className="flex justify-center mb-8 mt-8 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 blur-3xl animate-pulse" />
               <Avatar className="w-28 h-28 md:w-36 md:h-36 border-4 border-primary shadow-2xl shadow-primary/50 ring-8 ring-primary/10 relative z-10 transition-all duration-300 hover:scale-105 hover:ring-primary/20">
                 <AvatarImage src={profilePicture} alt="MD Atiqur Rahman" className="object-cover" />
