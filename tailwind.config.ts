@@ -80,10 +80,26 @@ export default {
             height: "0",
           },
         },
+        shimmer: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" }
+        },
+        float: {
+          "0%, 100%": { 
+            transform: "translateY(0) translateX(0) scale(1)",
+            opacity: "0.3"
+          },
+          "50%": { 
+            transform: "translateY(-100px) translateX(50px) scale(1.5)",
+            opacity: "0.6"
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        shimmer: "shimmer 3s ease-in-out infinite",
+        float: "float 8s ease-in-out infinite"
       },
     },
   },

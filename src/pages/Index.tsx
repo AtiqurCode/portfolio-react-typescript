@@ -2,13 +2,45 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ArrowRight, Code2, Briefcase, Award, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { ArrowRight, Code2, Briefcase, Award, Github, Linkedin, Mail, ExternalLink, Sparkles, Zap, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import profilePicture from "@/assets/profile-picture.jpg";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [displayedText, setDisplayedText] = useState("");
+  const fullText = "Crafting exceptional digital experiences through clean code and innovative solutions";
+  
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setDisplayedText(fullText.slice(0, index));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 30);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Animated floating particles */}
+      <div className="fixed inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-primary/20 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${5 + Math.random() * 10}s`,
+            }}
+          />
+        ))}
+      </div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/25 via-accent/10 to-background" />
@@ -32,8 +64,9 @@ const Index = () => {
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
-              Crafting exceptional digital experiences through clean code and innovative solutions
+            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4 min-h-[2em]">
+              {displayedText}
+              <span className="animate-pulse">|</span>
             </p>
 
             <div className="flex items-center justify-center gap-4 flex-wrap pt-8">
@@ -73,6 +106,39 @@ const Index = () => {
             <div className="w-1.5 h-3 bg-primary rounded-full mx-auto animate-pulse shadow-lg shadow-primary/50" />
           </div>
         </button>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 md:py-20 px-4 md:px-6 relative">
+        <div className="container max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { icon: Code2, number: "50+", label: "Projects Completed", color: "primary" },
+              { icon: Sparkles, number: "100%", label: "Client Satisfaction", color: "accent" },
+              { icon: Zap, number: "5+", label: "Years Experience", color: "primary" },
+              { icon: Target, number: "15+", label: "Happy Clients", color: "accent" },
+            ].map((stat, index) => (
+              <Card 
+                key={index}
+                className="relative p-8 text-center hover:scale-105 transition-all duration-300 group overflow-hidden border-2 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <div className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm md:text-base text-muted-foreground font-medium">
+                    {stat.label}
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Expertise Section */}
