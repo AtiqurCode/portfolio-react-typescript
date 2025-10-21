@@ -9,35 +9,35 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 217 33% 17%;
-    --card-foreground: 210 40% 98%;
-    --popover: 217 33% 17%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 177 100% 52%;
-    --primary-glow: 177 100% 65%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 267 84% 61%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 315 100% 62%;
-    --accent-glow: 315 100% 75%;
-    --accent-foreground: 210 40% 98%;
+    --foreground: 210 20% 98%;
+    --card: 217 19% 15%;
+    --card-foreground: 210 20% 98%;
+    --popover: 217 19% 15%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 217 91% 60%;
+    --primary-glow: 217 91% 70%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 262 52% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 43 96% 56%;
+    --accent-glow: 43 96% 66%;
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 215 27% 32%;
-    --input: 215 27% 25%;
-    --ring: 177 100% 52%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 20% 25%;
+    --input: 215 20% 20%;
+    --ring: 217 91% 60%;
     --radius: 0.75rem;
     --sidebar-background: 222 47% 11%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 177 100% 52%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 217 33% 17%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 215 27% 32%;
-    --sidebar-ring: 177 100% 52%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 19% 15%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 20% 25%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -73,10 +73,10 @@ All colors MUST be HSL.
 
 @keyframes glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2), 0 0 60px rgba(147, 51, 234, 0.1);
   }
   50% {
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6), 0 0 80px rgba(255, 0, 255, 0.4);
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.3), 0 0 90px rgba(147, 51, 234, 0.2);
   }
 }
 

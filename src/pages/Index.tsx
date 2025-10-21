@@ -28,10 +28,10 @@ const Index = () => {
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Animated floating particles */}
       <div className="fixed inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-primary/20 rounded-full animate-float"
+            className="absolute w-1.5 h-1.5 bg-primary/15 rounded-full animate-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -43,15 +43,13 @@ const Index = () => {
       </div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 md:px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/25 via-accent/10 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent" />
         
         <div className="container max-w-6xl mx-auto relative z-10">
           <div className="text-center space-y-6 animate-fade-in">
             <div className="flex justify-center mb-8 mt-8 relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-accent/40 to-secondary/40 blur-3xl animate-glow-pulse" />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 blur-2xl" />
-              <Avatar className="w-28 h-28 md:w-36 md:h-36 border-4 border-primary shadow-2xl shadow-primary/50 ring-8 ring-primary/20 relative z-10 transition-all duration-500 hover:scale-110 hover:rotate-3 hover:ring-accent/40 hover:border-accent animate-glow-pulse">
+              <Avatar className="w-28 h-28 md:w-36 md:h-36 border-4 border-primary/40 shadow-xl shadow-primary/20 relative z-10 transition-all duration-500 hover:scale-105 hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/30">
                 <AvatarImage src={profilePicture} alt="MD Atiqur Rahman" className="object-cover" />
                 <AvatarFallback>AR</AvatarFallback>
               </Avatar>
@@ -59,22 +57,22 @@ const Index = () => {
             
             <Badge className="mb-2 text-sm px-4 py-1.5" variant="outline">Full Stack Developer</Badge>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary bg-[length:200%_auto] animate-shimmer drop-shadow-[0_0_25px_rgba(0,255,255,0.5)]">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground">
               MD Atiqur Rahman
             </h1>
-            <p className="text-xl md:text-2xl text-foreground/90 font-medium animate-slide-up">
+            <p className="text-xl md:text-2xl text-muted-foreground font-light animate-slide-up">
               {displayedText}
-              <span className="animate-pulse text-accent">|</span>
+              <span className="animate-pulse">|</span>
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg shadow-primary/50 hover:shadow-accent/50 transition-all duration-300 hover:scale-105 border-2 border-primary/20" asChild>
+              <Button size="lg" className="shadow-lg hover:shadow-xl transition-all duration-300" asChild>
                 <Link to="/projects">
                   View Projects
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent/20 hover:border-accent hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/30" asChild>
+              <Button size="lg" variant="outline" className="border-2 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
                 <a href="mailto:contact@mdatiqur.me">
                   <Mail className="mr-2 h-5 w-5" />
                   Contact Me
@@ -108,32 +106,28 @@ const Index = () => {
 
       {/* Stats Section */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
         <div className="container max-w-6xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary bg-[length:200%_auto] animate-shimmer">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
             My Impact
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Code2, label: "Projects Completed", value: "50+", gradient: "from-primary via-primary-glow to-accent", color: "primary" },
-              { icon: Sparkles, label: "Client Satisfaction", value: "98%", gradient: "from-accent via-accent-glow to-secondary", color: "accent" },
-              { icon: Zap, label: "Years Experience", value: "5+", gradient: "from-secondary via-accent to-primary", color: "secondary" },
-              { icon: Target, label: "Happy Clients", value: "30+", gradient: "from-primary via-accent to-secondary", color: "primary" },
+              { icon: Code2, label: "Projects Completed", value: "50+", color: "text-primary" },
+              { icon: Sparkles, label: "Client Satisfaction", value: "98%", color: "text-accent" },
+              { icon: Zap, label: "Years Experience", value: "5+", color: "text-secondary" },
+              { icon: Target, label: "Happy Clients", value: "30+", color: "text-primary" },
             ].map((stat, index) => (
               <Card 
                 key={index} 
-                className="text-center p-6 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border/50 hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-accent/40 hover:scale-110 hover:-translate-y-2 group relative overflow-hidden"
+                className="text-center p-6 bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 group"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 <div className="pt-6 space-y-3 relative z-10">
-                  <div className={`inline-flex p-4 rounded-full bg-gradient-to-br ${stat.gradient} mb-2 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-${stat.color}/30`}>
-                    <stat.icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <h3 className={`text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br ${stat.gradient} group-hover:scale-110 transition-transform duration-300`}>
+                  <stat.icon className={`w-12 h-12 ${stat.color} mb-4 mx-auto transition-all duration-300 group-hover:scale-110`} />
+                  <h3 className="text-3xl md:text-4xl font-bold text-foreground">
                     {stat.value}
                   </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{stat.label}</p>
+                  <p className="text-muted-foreground">{stat.label}</p>
                 </div>
               </Card>
             ))}

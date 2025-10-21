@@ -96,10 +96,10 @@ export default {
         },
         "glow-pulse": {
           "0%, 100%": {
-            boxShadow: "0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.2)"
+            boxShadow: "0 0 30px rgba(59, 130, 246, 0.2), 0 0 60px rgba(147, 51, 234, 0.1)"
           },
           "50%": {
-            boxShadow: "0 0 40px rgba(0, 255, 255, 0.6), 0 0 80px rgba(255, 0, 255, 0.4)"
+            boxShadow: "0 0 50px rgba(59, 130, 246, 0.3), 0 0 90px rgba(147, 51, 234, 0.2)"
           }
         },
         "slide-up": {
