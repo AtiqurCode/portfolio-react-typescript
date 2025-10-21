@@ -81,13 +81,17 @@ const Index = () => {
             </div>
 
             <div className="flex items-center justify-center gap-6 pt-8 pb-20 md:pb-24">
-              <a href="https://github.com/mdatiqurrahman" target="_blank" rel="noopener noreferrer" 
+              <a href="https://github.com/AtiqurCode" target="_blank" rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform">
                 <Github className="h-6 w-6" />
               </a>
-              <a href="https://linkedin.com/in/mdatiqurrahman" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.linkedin.com/in/md-atiqur-rahman-02a473155" target="_blank" rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform">
                 <Linkedin className="h-6 w-6" />
+              </a>
+                <a href="https://www.linkedin.com/in/md-atiqur-rahman-02a473155" target="_blank" rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform">
+                <Pdf className="h-6 w-6" />
               </a>
             </div>
           </div>
