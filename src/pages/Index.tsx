@@ -89,10 +89,6 @@ const Index = () => {
                 className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform">
                 <Linkedin className="h-6 w-6" />
               </a>
-                <a href="https://www.linkedin.com/in/md-atiqur-rahman-02a473155" target="_blank" rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform">
-                <Pdf className="h-6 w-6" />
-              </a>
             </div>
           </div>
         </div>
